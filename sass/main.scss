@@ -131,7 +131,7 @@ body {
 
 .btn {
   &:link,
-  :visited {
+  &:visited {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
@@ -142,18 +142,25 @@ body {
     font-size: 1.6rem;
   }
   &--white {
-    background-color: white;
-    color: #777;
+    background-color: $color-white;
+    color: $color-black;
+    &::after {
+      background-color: $color-white;
+    }
   }
 
   &:hover {
     transform: translateY(-.4rem);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.301);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.601);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
   }
 
   &:active {
     transform: translateY(-.1rem);
-    box-shadow: 0 .5rem .8rem rgba($color-black, 0.301);
+    box-shadow: 0 .5rem .8rem rgba($color-black, 0.401);
   }
 
   &::after {
@@ -167,15 +174,6 @@ body {
     left: 0rem;
     z-index: -1;
     transition: all .2s;
-  }
-
-  &--white::after {
-    background-color: $color-white;
-  }
-
-  &:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
   }
 
   &--animated {

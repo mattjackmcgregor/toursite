@@ -91,8 +91,7 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
-.btn:link,
-.btn :visited {
+.btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -103,16 +102,21 @@ body {
   font-size: 1.6rem; }
 
 .btn--white {
-  background-color: white;
+  background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn:hover {
   transform: translateY(-0.4rem);
-  box-shadow: 0 1rem 2rem rgba(119, 119, 119, 0.301); }
+  box-shadow: 0 1rem 2rem rgba(119, 119, 119, 0.601); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 0.8rem rgba(119, 119, 119, 0.301); }
+  box-shadow: 0 0.5rem 0.8rem rgba(119, 119, 119, 0.401); }
 
 .btn::after {
   content: "";
@@ -125,13 +129,6 @@ body {
   left: 0rem;
   z-index: -1;
   transition: all .2s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInButton .5s ease-out .5s;
