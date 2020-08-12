@@ -9,7 +9,7 @@
     border-radius: 10rem;
     transition: all .2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
   &--white {
@@ -52,5 +52,29 @@
   &--animated {
     animation: moveInButton .5s ease-out .5s;
     animation-fill-mode: backwards;
+  }
+}
+.btn-text {
+  &:link,
+  &:visited {
+    display: inline-block;
+    color: $color-primary-green;
+    text-decoration: none;
+    font-size: $default-font-size;
+    padding: 3px;
+    border-bottom: 2px solid $color-primary-green;
+    transition: all .2s;
+    position: relative;
+
+  }
+  &:hover {
+    transform: translateY(-.4rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.601);
+    background-color: $color-primary-green;
+    color: $color-white;
+  }
+  &:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem .8rem rgba($color-black, 0.401);
   }
 }
